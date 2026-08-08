@@ -218,6 +218,48 @@ section {
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+  /* ⭐ PASTE NEW CSS HERE ⭐ */
+
+.how-it-works-section {
+  padding: 5rem 2rem;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.how-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transition: 0.35s ease;
+  border: 1px solid #eef2f7;
+}
+
+.how-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.how-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.how-card h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.how-card p {
+  color: #555;
+}
 
 /* -------------------- ANIMATION JS -------------------- */
 </style>
@@ -263,17 +305,44 @@ section {
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how-it-works" class="fade-in">
+<section id="how-it-works" class="fade-in how-it-works-section">
   <h2 class="gradient-text">How It Works</h2>
-  <div class="steps">
-    <div class="card">⬆️ Upload</div>
-    <div class="card">🤖 AI Optimize</div>
-    <div class="card">🎯 Tailor</div>
-    <div class="card">📄 Export</div>
-    <div class="card">💬 Practice</div>
+
+  <div class="how-grid">
+
+    <a href="upload.html" class="how-card">
+      <div class="how-icon">⬆️</div>
+      <h3>Upload Your Resume</h3>
+      <p>Drag & drop your resume or paste your LinkedIn profile.</p>
+    </a>
+
+    <a href="optimize.html" class="how-card">
+      <div class="how-icon">🤖</div>
+      <h3>AI Optimization</h3>
+      <p>Our AI rewrites your resume for clarity, impact, and ATS success.</p>
+    </a>
+
+    <a href="tailor.html" class="how-card">
+      <div class="how-icon">🎯</div>
+      <h3>Tailor to Jobs</h3>
+      <p>Match your resume to any job description with targeted keywords.</p>
+    </a>
+
+    <a href="export.html" class="how-card">
+      <div class="how-icon">📄</div>
+      <h3>Export Polished Files</h3>
+      <p>Download your resume in PDF or Word with one click.</p>
+    </a>
+
+    <a href="practice.html" class="how-card">
+      <div class="how-icon">💬</div>
+      <h3>Interview Prep</h3>
+      <p>Practice with AI‑generated interview questions tailored to your role.</p>
+    </a>
+
   </div>
 </section>
+
 
 <!-- PRICING -->
 <section id="pricing" class="fade-in">
