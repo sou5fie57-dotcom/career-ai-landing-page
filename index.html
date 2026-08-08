@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerAI – AI Resume & LinkedIn Optimizer</title>
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f7f9fc;
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0078d7, #00a86b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0078d7;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-links ul li a:hover {
+  color: #0078d7;
+  transform: translateY(-2px);
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+  padding: 8rem 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  background: linear-gradient(135deg, #e8f4ff, #f3fff7);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: #0078d7;
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #005bb5;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 2px solid #0078d7;
+  color: #0078d7;
+  padding: 0.9rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #e6f3ff;
+  transform: translateY(-3px);
+}
+
+.hero img {
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* -------------------- SECTIONS -------------------- */
+section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.features, .steps, .pricing-cards, .testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 2rem;
+  width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* -------------------- FINAL CTA -------------------- */
+.final-cta {
+  background: linear-gradient(135deg, #0078d7, #00a86b);
+  color: #fff;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.final-cta img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* -------------------- ANIMATION JS -------------------- */
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">CareerAI</div>
+  <nav class="nav-links">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#final-cta">Get Started</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- HERO -->
+<section class="hero fade-in" id="hero">
+  <div>
+    <h1 class="gradient-text">AI‑Powered Career Tools</h1>
+    <p>Optimize your resume, tailor job applications, and upgrade your LinkedIn profile instantly.</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="#pricing">Start Free</a>
+      <a class="btn-secondary" href="#plans">See Plans</a>
+    </div>
+  </div>
+  <img src="resume-linkedin-illustration.png" alt="Resume Illustration">
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="fade-in">
+  <h2 class="gradient-text">Features</h2>
+  <div class="features">
+    <div class="card">📄 <h3>Resume Optimization</h3></div>
+    <div class="card">💼 <h3>LinkedIn Enhancer</h3></div>
+    <div class="card">💬 <h3>Interview Prep</h3></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="fade-in">
+  <h2 class="gradient-text">How It Works</h2>
+  <div class="steps">
+    <div class="card">⬆️ Upload</div>
+    <div class="card">🤖 AI Optimize</div>
+    <div class="card">🎯 Tailor</div>
+    <div class="card">📄 Export</div>
+    <div class="card">💬 Practice</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="fade-in">
+  <h2 class="gradient-text">Pricing</h2>
+  <div class="pricing-cards">
+    <div class="card"><h3>Free</h3><p>$0</p></div>
+    <div class="card"><h3>Subscriber</h3><p>$15/month</p></div>
+    <div class="card"><h3>Premium</h3><p>$99 one‑time</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="fade-in">
+  <h2 class="gradient-text">Testimonials</h2>
+  <div class="testimonial-cards">
+    <div class="card">“I got three interviews in a week.”</div>
+    <div class="card">“My LinkedIn finally stands out.”</div>
+    <div class="card">“The interview prep was perfect.”</div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final-cta" class="final-cta fade-in">
+  <div>
+    <h2>Your next job starts here.</h2>
+    <a class="btn-primary" href="#signup">Start Free Today</a>
+  </div>
+  <img src="job-offer-celebration.png" alt="Celebration">
+</section>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+
+/* Scroll reveal */
+const elements = document.querySelectorAll('.fade-in');
+const revealOnScroll = () => {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
