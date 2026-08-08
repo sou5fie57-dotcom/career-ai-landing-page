@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume & LinkedIn Optimizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">CareerAI</div>
+    <nav class="nav-links" id="nav-links">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#final-cta">Get Started</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>AI‑Powered Career Tools — Optimize, Tailor, and Win Your Next Job</h1>
+      <p>Turn your resume and LinkedIn profile into recruiter magnets in minutes.</p>
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn-primary">Start Free</a>
+        <a href="#plans" class="btn-secondary">See Plans</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="resume-linkedin-illustration.png" alt="Resume and LinkedIn AI optimization">
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section class="problem">
+    <h2>Struggling to get interviews?</h2>
+    <p>Most resumes never make it past automated filters. LinkedIn profiles get lost in the crowd. You deserve better — tools that make your skills shine and help recruiters notice you.</p>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section class="features" id="features">
+    <div class="feature"><div class="icon">📄</div><h3>Resume Optimization</h3><p>ATS‑ready resumes built with recruiter‑friendly formatting.</p></div>
+    <div class="feature"><div class="icon">💼</div><h3>LinkedIn Optimizer</h3><p>Headlines and summaries that grab attention.</p></div>
+    <div class="feature"><div class="icon">💬</div><h3>Interview Prep</h3><p>Tailored Q&A sets to boost confidence before the big day.</p></div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="icon">⬆️</div><h3>Step 1</h3><p>Upload your resume.</p></div>
+      <div class="step"><div class="icon">🤖</div><h3>Step 2</h3><p>Claude AI optimizes it.</p></div>
+      <div class="step"><div class="icon">🎯</div><h3>Step 3</h3><p>Tailor to job descriptions.</p></div>
+      <div class="step"><div class="icon">📄</div><h3>Step 4</h3><p>Export PDF/Word.</p></div>
+      <div class="step"><div class="icon">💬</div><h3>Step 5</h3><p>Practice interview prep.</p></div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <h2>Choose Your Plan</h2>
+    <p>Flexible options for every stage of your career journey.</p>
+    <div class="pricing-cards">
+      <div class="card free"><h3>Free</h3><p>Preview only. No downloads.</p><p class="price">$0</p><a href="#signup" class="btn-primary">Start Free</a></div>
+      <div class="card subscriber"><h3>Subscriber</h3><p>Unlock downloads, tailoring, LinkedIn summaries, and interview prep.</p><p class="price">$15/month</p><a href="#signup" class="btn-primary">Subscribe Now</a></div>
+      <div class="card premium"><h3>Premium</h3><p>Unlimited access, lifetime updates, extended downloads.</p><p class="price">$99 one‑time</p><a href="#signup" class="btn-primary">Go Premium</a></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card"><img src="avatar1.png" alt="User"><p class="quote">“I got three interviews in a week after optimizing my resume here.”</p><div class="stars">★★★★★</div></div>
+      <div class="testimonial-card"><img src="avatar2.png" alt="User"><p class="quote">“The LinkedIn summary suggestions helped me stand out.”</p><div class="stars">★★★★★</div></div>
+      <div class="testimonial-card"><img src="avatar3.png" alt="User"><p class="quote">“The interview prep questions were spot‑on.”</p><div class="stars">★★★★★</div></div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="final-cta">
+    <div class="cta-content">
+      <h2>Your next job starts here.</h2>
+      <p>Unlock AI-powered career tools and land interviews faster.</p>
+      <a href="#signup" class="btn-primary">Start Free Today</a>
+    </div>
+    <div class="cta-visual">
+      <img src="job-offer-celebration.png" alt="Celebrating job offer">
+    </div>
+  </section>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
